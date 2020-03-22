@@ -1,9 +1,10 @@
 import React from 'react'
+import { Alert } from 'reactstrap'
 
 export default function Header() {
     return (
-        <div>
-            header
-        </div>
+        <Alert color="info">
+            Expense Tracker
+        </Alert>
     )
 }
