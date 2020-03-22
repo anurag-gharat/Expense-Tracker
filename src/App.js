@@ -4,18 +4,21 @@ import Balance from './components/Balance'
 import IncomeExpenses from './components/IncomeExpenses'
 import TransactionList from './components/TransactionList'
 import AddTransaction from './components/AddTransaction'
-import logo from './logo.svg';
+import {GlobalProvider} from './Context/GlobalState'
 import './App.css';
 
 function App() {
   return (
-    <div className="App p-2 bg-light shadow-lg mt-2">
+    <GlobalProvider>
+      <div className="App p-2 bg-light shadow-lg mt-2">
       <Header />
       <Balance />
       <IncomeExpenses />
       <TransactionList />
       <AddTransaction />
     </div>
+    </GlobalProvider>
+    
   );
 }
 

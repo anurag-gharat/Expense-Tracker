@@ -1,23 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Alert } from 'reactstrap'
-
+import {GlobalContext } from '../Context/GlobalState'
+import Transaction from './Transaction'
 export default function TransactionList() {
+
+    const context = useContext(GlobalContext)
+    const {transactions} = context 
+    console.log(context);
+    
     return (
         <div className="container-fluid pt-5">
             <h4>History</h4>
             <hr />
-            <Alert color="success" className="d-flex justify-content-between">
-                <h5>Cash</h5>
-                <h5>+500</h5>
-            </Alert>
-            <Alert color="success" className="d-flex justify-content-between">
-                <h5>Cash</h5>
-                <h5>+500</h5>
-            </Alert>
-            <Alert color="danger" className="d-flex justify-content-between">
-                <h5>Cash</h5>
-                <h5>+500</h5>
-            </Alert>
+            {transactions.map(transaction=>{
+                return(
+                <Transaction transaction={transaction} />  
+                ) 
+                
+            })}
         </div>
     )
 }

@@ -11,12 +11,13 @@ export default function AddTransaction() {
            <Alert color="primary" className="mt-5">
                Add a new Transaction
            </Alert>
-           <InputGroup className="mt-2"><Input placeholder="Add transaction name">
+           <InputGroup className="mt-2">
+               <Input placeholder="Add transaction name" value={text} onChange={(e)=>setText(e.target.value)}>
            </Input>
            </InputGroup>
            <InputGroup className="mt-2">
             <InputGroupAddon addonType="prepend">Rs:</InputGroupAddon>
-            <Input placeholder="Amount" min={0} max={10000} type="number" step="1" />
+            <Input placeholder="Amount" min={0} max={10000} type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} />
             <InputGroupAddon addonType="append">.00</InputGroupAddon>
             </InputGroup>
             <Button  className="mt-2" outline color="primary">ADD TRANSACTION</Button>
